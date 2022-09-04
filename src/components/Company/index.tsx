@@ -56,10 +56,10 @@ const Company = ({
                         />
                     </div>
                     <Campo 
-                    id="site" 
-                    name="site" 
-                    type="site" 
-                    label={"Site"}
+                    id="resp" 
+                    name="resp" 
+                    type="resp" 
+                    label={"Responsável"}
                     />
                 </div>
                 <div className={styles.actingOptionsBox}>

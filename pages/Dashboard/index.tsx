@@ -10,6 +10,9 @@ import Company from "../../src/components/Company";
 
 const Dashboard: NextPage = () =>{
     const [selectFundation, setSelectFundation] = useState({value: '', label: ''})
+    const [projectValue, setProjectValue] = useState()
+    const [editalValue, setEditalValue] = useState()
+    const [natureValue, setNatureValue] = useState()
 
     const options = [
         {value: 'startup', label:'Startup'},
@@ -46,21 +49,31 @@ const Dashboard: NextPage = () =>{
 
     const handleFrame = () => {
         if(selectFundation?.value === 'startup'){
-            return <Startup statesOptions={states} actingOptions={acting}/>
+            return <Startup 
+            statesOptions={states} 
+            actingOptions={acting}/>
         }
         else if(selectFundation?.value === 'company'){
-            return <Company onHandleSubmit={handleSubmit } resetOptions={resetOptions} statesOptions={states}/>
+            return <Company 
+            onHandleSubmit={handleSubmit} 
+            resetOptions={resetOptions} 
+            statesOptions={states}/>
         }
         else if(selectFundation?.value === 'IESP'){
-            return <Iesp/>
+            return <Iesp 
+            statesOptions={states} 
+            onProjectValue={setProjectValue} 
+            onEditalValue={setEditalValue}/>
         }
         else if(selectFundation?.value === 'ICT'){
-            return <Ict/>
+            return <Ict statesOptions={states} onNatureValue={setNatureValue}/>
         }
         else {
             return (<div style={{fontSize: '2rem', textAlign: 'center', marginTop: '2rem'}}>Selecione uma opção</div>)
         }
     }
+
+    console.log(projectValue)
 
     return (
         <div className={styles.container}>
