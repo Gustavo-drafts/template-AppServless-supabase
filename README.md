@@ -20,8 +20,8 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 Routes from navegate in aplication:
 
-'/' = Login screen
+`'/'` = Login screen
 
-'/Register' = Register screen
+`'/Register'` = Register screen
 
-'/Dashboard' = Capture screen
+`'/Dashboard'` = Capture screen
