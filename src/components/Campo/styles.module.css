@@ -1,13 +1,13 @@
 .label {
     display: inline-block;
     margin-bottom: 0.5rem;
-    color: #fff;
+    color: #000;
 }
 
 .input {
     display: block;
     width: 100%;
-    min-height: calc(1.5em + 0.75rem + 2px);
+    min-height: 3vh;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -29,7 +29,7 @@
 .isError {
     display: block;
     width: 100%;
-    min-height: calc(1.5em + 0.75rem + 2px);
+    min-height: 3vh;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;

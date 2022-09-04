@@ -1,0 +1,15 @@
+.headerBox{
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    padding-left: 4rem;
+    border-bottom: 1px solid rgb(155, 155, 155);
+}
+
+.labelFoundation {
+    margin-right: 1rem;
+}
+
+.basicSingle {
+    width: 30%;
+}
