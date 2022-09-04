@@ -1,0 +1,64 @@
+.label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    min-height: calc(1.5em + 0.75rem + 2px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.isError {
+    display: block;
+    width: 100%;
+    min-height: calc(1.5em + 0.75rem + 2px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff; 
+    background-clip: padding-box;
+    border: 1px solid red;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.isError:focus {
+    border-color: red;
+    box-shadow: 0 0 0 0.2rem rgba(252, 13, 13, 0.5);
+}
+
+.input:focus,
+.button:focus {
+    outline: 0;
+    border-color: #884ea0;
+    box-shadow: 0 0 0 0.2rem rgba(229, 229, 245, 0.5);
+}
+
+.errorMensage {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .85rem;
+    color: red;
+}

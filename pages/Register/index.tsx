@@ -1,14 +1,20 @@
 import React from "react";
-import { BsFillArrowLeftCircleFill } from 'react-icons/bs'
+import styles from './styles.module.css'
+import { NextPage } from "next";
 import Campo from "../../src/components/Campo/Campo"
 import { Formik } from 'formik';
 import * as yup from 'yup'
-import "./Register.css"
+import Link from 'next/link'
+import supabase from '../../pages/api/supabase'
 
-export default function Register(){
+const Register: NextPage = () =>{
 
-    const handleSubmit = (values: any) => {
-        alert(JSON.stringify(values))
+    const handleSubmit = async (values: any) => {
+        const { email, password } = values
+        // alert(JSON.stringify(values))
+        const { data, error, status } = await supabase.from('users').insert([{ email }]);
+
+        console.log(status)
     }
     
     const schema = yup.object({
@@ -28,16 +34,15 @@ export default function Register(){
     })
 
     return (
-        <div className="container">
-            <h1 className="title-register">Game Colaborator</h1>
+        <div className={styles.container}>
             <Formik 
                 onSubmit={(val) => handleSubmit(val)} 
                 validationSchema={schema}
                 initialValues={{ name: '', email: '', password:''}}
                 >
                 {props => (
-                <form className="register-form" onSubmit={props.handleSubmit} noValidate>
-                    <h2 className="title-register">Register</h2>
+                <form className={styles.registerForm} onSubmit={props.handleSubmit} noValidate>
+                    <h2 className={styles.titleRegister}>Register</h2>
                     <Campo 
                     id="name" 
                     name="name" 
@@ -62,9 +67,9 @@ export default function Register(){
                     type="password" 
                     label={"Confirme senha"}
                     />
-                    <div className="box-submit">
-                        <a href="/login" className="back-login-p"><BsFillArrowLeftCircleFill style={{marginRight: '1rem'}}/><p>Login</p></a>
-                        <button type="submit">Inscrever</button>
+                    <div className={styles.boxSubmit}>
+                        <Link  href="/" ><p className={styles.backToLogin}>Login</p></Link >
+                        <button className={styles.button} type="submit">Inscrever</button>
                     </div>
                 </form>
             )}
@@ -72,3 +77,5 @@ export default function Register(){
         </div>
     )
 }
+
+export default Register;

@@ -3,12 +3,14 @@ import styles from './styles.module.css'
 import icon from '../../../public/icon.png'
 import { FormEvent, useCallback, useState } from 'react'
 import supabase from '../../../pages/api/supabase'
+import Link from 'next/link'
 
 export function Login() {
   
   
   const [email, setEmail] = useState('')
   const [isSaving, setIsSaving] = useState(false)
+  const [password, setPassword] = useState('')
 
   const signNewData = useCallback(async (e: FormEvent) => {
     e.preventDefault();
@@ -32,11 +34,11 @@ export function Login() {
     setEmail('')
   }, [email])
   
+
   
-  
-  
-  
-  
+
+
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -51,15 +53,22 @@ export function Login() {
           Insira o email a ser registrado da base de dados!
         </p>
 
-        <form onSubmit={signNewData}>
+          <form onSubmit={signNewData}>
           <input type="email"
             placeholder='exemplo@email.com'
             className={styles.emailInput}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          />
-          <button type='submit' className={styles.signButton} style={{ pointerEvents: isSaving ? 'none' : 'auto' }}>Inscrever</button>
-        </form>
+            />
+            <input type="password"
+            placeholder='senha'
+            className={styles.passwordInput}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type='submit' className={styles.signButton} style={{ pointerEvents: isSaving ? 'none' : 'auto' }}>Login</button>
+            <Link  href="/Register" ><p className={styles.goToRegister}>Cadastro</p></Link >
+          </form>
 
         <ul>
           <li>{ }</li>

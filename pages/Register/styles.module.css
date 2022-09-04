@@ -1,0 +1,49 @@
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #121212;
+}
+
+.registerForm {
+    padding: 32px 16px;
+    width: 500px;
+    background: #2e2e2e;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleRegister {
+    color: #fff;
+    margin: 0 0 1rem 0;
+}
+  
+.button {
+    color: #fff;
+    background-color: #2a356a;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 3rem;
+
+}
+
+.boxSubmit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.backToLogin {
+    color: #fff;
+    cursor: pointer;
+}
